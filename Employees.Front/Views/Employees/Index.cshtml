@@ -1,0 +1,41 @@
+﻿@model  List<Employees.Front.Dtos.EmployeesDTO>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2 class="text-center">Employees</h2>
+
+<div class="container">
+    <!-- Boton Create  -->
+    <a asp-action="Create" asp-controller="Employees" class="btn btn-success "><i class="fas fa-plus"></i> Add</a>
+    <br />
+    <br />
+
+
+    <!-- Table employees -->
+    <div class="row">
+        <div class="col-md-12">
+
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>NAME</th>
+                        <th>AGE</th>
+                    </tr>
+                </thead>
+                <!-- Recorro el modelo para imprimir datos -->
+                @foreach (var element in Model)
+                {
+                    <tr>
+                        <td>@element.Id</td>
+                        <td>@element.Name</td>
+                        <td>@element.Age</td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+
+</div>

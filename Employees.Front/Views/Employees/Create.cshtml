@@ -1,0 +1,28 @@
+﻿@model  Employees.Front.Dtos.EmployeeRequest
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2 class="text-center">Employees</h2>
+
+
+<div class="container-fluid">
+    <form asp-action="Create">
+        <div class="form-row">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group col-lg-6">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group col-lg-6">
+                <label asp-for="Age" class="control-label"></label>
+                <input asp-for="Age" class="form-control" />
+                <span asp-validation-for="Age" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group mt-4">
+              <input type="submit" value="Create" class="btn btn-success" />
+        </div>
+    </form>
+</div>
